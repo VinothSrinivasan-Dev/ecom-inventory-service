@@ -15,7 +15,9 @@ public class InventoryController {
     }
 
     @GetMapping("/{productId}")
-    public Inventory checkInventory(@PathVariable Long productId) {
+    public Inventory checkInventory(@PathVariable Long productId) throws Exception {
+        Thread.sleep(5000);
+//        throw new Exception("Inventory Service is down!");
         return inventoryService.checkStock(productId);
     }
 
